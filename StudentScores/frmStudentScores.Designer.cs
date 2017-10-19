@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentScores));
             this.lblStudents = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstStudentData = new System.Windows.Forms.ListBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -53,14 +53,15 @@
             this.lblStudents.TabIndex = 0;
             this.lblStudents.Text = "Students:";
             // 
-            // listBox1
+            // lstStudentData
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(39, 80);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(602, 292);
-            this.listBox1.TabIndex = 1;
+            this.lstStudentData.FormattingEnabled = true;
+            this.lstStudentData.ItemHeight = 16;
+            this.lstStudentData.Location = new System.Drawing.Point(39, 80);
+            this.lstStudentData.Name = "lstStudentData";
+            this.lstStudentData.Size = new System.Drawing.Size(602, 292);
+            this.lstStudentData.TabIndex = 1;
+            this.lstStudentData.SelectedIndexChanged += new System.EventHandler(this.lstStudentData_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -82,6 +83,7 @@
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update...";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -173,7 +175,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstStudentData);
             this.Controls.Add(this.lblStudents);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -181,6 +183,7 @@
             this.Name = "frmStudentScores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Scores";
+            this.Load += new System.EventHandler(this.frmStudentScores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +192,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblStudents;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstStudentData;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;

@@ -73,6 +73,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(289, 22);
             this.txtName.TabIndex = 3;
+            this.txtName.Tag = "";
             // 
             // txtScore
             // 
@@ -97,6 +98,7 @@
             this.btnAddScore.TabIndex = 6;
             this.btnAddScore.Text = "Add Score";
             this.btnAddScore.UseVisualStyleBackColor = true;
+            this.btnAddScore.Click += new System.EventHandler(this.btnAddScore_Click);
             // 
             // btnClearScores
             // 
@@ -106,9 +108,11 @@
             this.btnClearScores.TabIndex = 7;
             this.btnClearScores.Text = "Clear Scores";
             this.btnClearScores.UseVisualStyleBackColor = true;
+            this.btnClearScores.Click += new System.EventHandler(this.btnClearScores_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(241, 224);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(119, 31);
@@ -119,12 +123,15 @@
             // 
             // btnOK
             // 
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Location = new System.Drawing.Point(104, 224);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(119, 31);
             this.btnOK.TabIndex = 9;
+            this.btnOK.Tag = "";
             this.btnOK.Text = "Ok";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // frmAddNewStudent
             // 
@@ -147,6 +154,7 @@
             this.MinimizeBox = false;
             this.Name = "frmAddNewStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "";
             this.Text = "Add New Student ";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,12 +166,12 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label lblScoresList;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtScore;
         private System.Windows.Forms.TextBox txtScoreList;
         private System.Windows.Forms.Button btnAddScore;
         private System.Windows.Forms.Button btnClearScores;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
+        public System.Windows.Forms.TextBox txtName;
     }
 }

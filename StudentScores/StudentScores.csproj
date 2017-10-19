@@ -51,19 +51,46 @@
     <Compile Include="frmAddNewStudent.Designer.cs">
       <DependentUpon>frmAddNewStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddScore.Designer.cs">
+      <DependentUpon>frmAddScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStudentScores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmStudentScores.Designer.cs">
       <DependentUpon>frmStudentScores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUpdateScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateScore.Designer.cs">
+      <DependentUpon>frmUpdateScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateScores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateScores.Designer.cs">
+      <DependentUpon>frmUpdateScores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAddNewStudent.resx">
       <DependentUpon>frmAddNewStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddScore.resx">
+      <DependentUpon>frmAddScore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStudentScores.resx">
       <DependentUpon>frmStudentScores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateScore.resx">
+      <DependentUpon>frmUpdateScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateScores.resx">
+      <DependentUpon>frmUpdateScores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
