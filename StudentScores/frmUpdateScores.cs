@@ -53,8 +53,7 @@ namespace StudentScores
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddScore addScoreForm = new frmAddScore();
-            DialogResult selectedButton = addScoreForm.ShowDialog();
-            //if (selectedButton = DialogResult.Ok)
+            DialogResult selectedButton = addScoreForm.ShowDialog();            
             lstScores.Items.Add(addScoreForm.Tag);
         }
 

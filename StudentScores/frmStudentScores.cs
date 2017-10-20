@@ -50,7 +50,6 @@ namespace StudentScores
             //coming back from Add New Student Form
             if (selectedButton == DialogResult.OK && addNewForm.Tag != "")
             { 
-                //old way: lstStudentData.Items.Add(addNewForm.Tag.ToString());
                 //add new data to stringList 
                 listStudentScores.Add(addNewForm.Tag.ToString());
                 lstStudentData.Items.Clear();
@@ -112,14 +111,12 @@ namespace StudentScores
 
             frmUpdateScores updateForm = new frmUpdateScores();
             selectedStudent = listStudentScores[currentStudentIndex];
-            //studentIndex = lstStudentData.SelectedIndex;
             updateForm.Tag = selectedStudent;
             DialogResult selectedButton = updateForm.ShowDialog();
 
             if (selectedButton == DialogResult.OK)
             {
                 updatedStudent = updateForm.Tag.ToString();
-                //lstStudentData.Items.RemoveAt(studentIndex);
                 lstStudentData.Items[currentStudentIndex] = updatedStudent;
 
             }
@@ -130,6 +127,20 @@ namespace StudentScores
         private void btnDelete_Click(object sender, EventArgs e)
         {
             lstStudentData.Items.Remove(lstStudentData.SelectedItem);
+            listStudentScores.Clear();
+
+            foreach (object student in lstStudentData.Items)
+            {
+                
+                listStudentScores.Add(student.ToString());
+            }
+
+            lstStudentData.Items.Clear();
+
+            foreach (string student in listStudentScores)
+            {
+                lstStudentData.Items.Add(student);
+            }
         }
     }
 }
