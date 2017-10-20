@@ -29,6 +29,7 @@ namespace StudentScores
             for (int i = 1; i < studentScoreArray.Length ; i++)
             {
                 lstScores.Items.Add(studentScoreArray[i]);
+                lstScores.SelectedIndex = 0;
             }
 
         }
@@ -40,27 +41,36 @@ namespace StudentScores
 
         private void Ok(object sender, EventArgs e)
         {
-
+            string updatedInfo = "";
+            updatedInfo = txtName.Text;
+            foreach (string s in lstScores.Items)
+            {
+                updatedInfo += "|" + s;
+            }
+            this.Tag = updatedInfo;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddScore addScoreForm = new frmAddScore();
             DialogResult selectedButton = addScoreForm.ShowDialog();
+            //if (selectedButton = DialogResult.Ok)
             lstScores.Items.Add(addScoreForm.Tag);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             frmUpdateScore updateScoreForm = new frmUpdateScore();
-            DialogResult selectedButton = updateScoreForm.ShowDialog();
-            string scoreToUpdate = lstScores.SelectedValue.ToString();
+            string scoreToUpdate = lstScores.SelectedItem.ToString();
             updateScoreForm.Tag = scoreToUpdate;
+            DialogResult selectedButton = updateScoreForm.ShowDialog();
+            if (selectedButton == DialogResult.OK)
+                lstScores.Items[lstScores.SelectedIndex] = updateScoreForm.Tag.ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            lstScores.Items.Remove(lstScores.SelectedItem);
         }
 
         private void btnClearScores_Click(object sender, EventArgs e)

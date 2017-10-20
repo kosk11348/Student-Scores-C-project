@@ -49,6 +49,7 @@
             this.txtUpdateScore.Name = "txtUpdateScore";
             this.txtUpdateScore.Size = new System.Drawing.Size(100, 22);
             this.txtUpdateScore.TabIndex = 1;
+            this.txtUpdateScore.TextChanged += new System.EventHandler(this.txtUpdateScore_TextChanged);
             // 
             // btnUpdate
             // 

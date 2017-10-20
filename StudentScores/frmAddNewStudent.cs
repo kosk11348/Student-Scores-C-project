@@ -28,24 +28,30 @@ namespace StudentScores
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string newStudent = txtName.Text;
-            foreach (int score in scoresList)
+            if (txtName.Text != "")
             {
-                newStudent += "|" + score;
-            }
-            //add score list to name string
+                string newStudent = txtName.Text;
+                foreach (int score in scoresList)
+                {
+                    newStudent += "|" + score;
+                }
+                //add score list to name string
 
-            this.Tag = newStudent;
+                this.Tag = newStudent;
+            }
             
         }
 
         private void btnAddScore_Click(object sender, EventArgs e)
         {
             //add to list of scores here
-            scoresList.Add(Convert.ToInt32(txtScore.Text));            
-            txtScoreList.Text = txtScoreList.Text + " " + txtScore.Text;
-            txtScore.Text = "";
-            txtScore.Focus();
+            if (txtScore.Text != "")
+            {
+                scoresList.Add(Convert.ToInt32(txtScore.Text));
+                txtScoreList.Text = txtScoreList.Text + " " + txtScore.Text;
+                txtScore.Text = "";
+                txtScore.Focus();
+            }
         }
 
         private void btnClearScores_Click(object sender, EventArgs e)

@@ -19,7 +19,12 @@ namespace StudentScores
 
         private void frmUpdateScore_Load(object sender, EventArgs e)
         {
-            txtUpdateScore.Text = this.Tag.ToString();
+            txtUpdateScore.Text = this.Tag.ToString();            
+        }
+
+        private void txtUpdateScore_TextChanged(object sender, EventArgs e)
+        {
+            this.Tag = txtUpdateScore.Text;
         }
     }
 }
